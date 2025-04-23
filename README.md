@@ -1,6 +1,6 @@
 # ✨ Quote Generator ✨
 <p align="center">
-  <img src="https://your-image-url-here" alt="Quote Generator UI" width="600"/>
+  <img src="image.png" alt="Quote Generator UI" width="600"/>
 </p>
 
 <p align="center">

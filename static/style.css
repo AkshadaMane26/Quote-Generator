@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #373b31, #214529);
+    background: linear-gradient(135deg, #f3e6ff, #ffffff);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     padding: 30px 40px;
     border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px #250447;
     width: 90%;
     max-width: 600px;
     text-align: center;
@@ -21,14 +21,14 @@ body {
 
 h1 {
     font-size: 2.2em;
-    color: #2e7d32;
+    color: #250447;
     margin-bottom: 20px;
 }
 
 .quote-box {
     padding: 20px;
-    background: #e8f5e9;
-    border-left: 6px solid #66bb6a;
+    background: #f3e9f8;
+    border-left: 6px solid #250447;
     border-radius: 10px;
     margin-bottom: 20px;
     transition: transform 0.2s ease;
@@ -41,11 +41,11 @@ h1 {
 #quote-text {
     font-size: 1.3em;
     font-weight: bold;
-    color: #1b5e20;
+    color: #5a2b89;
 }
 
 button {
-    background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    background: linear-gradient(to right, #a379f1 0%, #6f12c5 100%);
     border: none;
     padding: 12px 25px;
     color: #fff;
@@ -65,25 +65,25 @@ button:hover {
 select {
     width: 100%;
     padding: 12px;
-    border: 1px solid #a5d6a7;
+    border: 1px solid #bda5d6;
     border-radius: 8px;
     margin-top: 10px;
     font-size: 1em;
-    background-color: #f1f8e9;
+    background-color: #f3e9f8;
 }
 
 h3 {
     margin-top: 20px;
     font-weight: 600;
-    color: #33691e;
+    color: #491e69;
 }
 
 .author-quotes-box p {
-    background: #dcedc8;
+    background: #e2c8ed;
     padding: 10px 15px;
-    border-left: 4px solid #9ccc65;
+    border-left: 4px solid #a865cc;
     border-radius: 8px;
     font-style: italic;
-    color: #558b2f;
+    color: #6f2f8b;
     margin: 10px 0;
 }
