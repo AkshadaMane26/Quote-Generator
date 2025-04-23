@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #373b31, #214529);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.quote-box {
+    padding: 20px;
+    background: #e8f5e9;
+    border-left: 6px solid #66bb6a;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.quote-box:hover {
+    transform: scale(1.02);
+}
+
+#quote-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+button {
+    background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    border: none;
+    padding: 12px 25px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 1em;
+    background-color: #f1f8e9;
+}
+
+h3 {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #33691e;
+}
+
+.author-quotes-box p {
+    background: #dcedc8;
+    padding: 10px 15px;
+    border-left: 4px solid #9ccc65;
+    border-radius: 8px;
+    font-style: italic;
+    color: #558b2f;
+    margin: 10px 0;
+}

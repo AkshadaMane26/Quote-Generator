@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Quote Generator ✨</h1>
+        <div class="quote-box">
+            <p id="quote-text">"Quote of the Day"</p>
+        </div>
+
+        <button onclick="fetchQuote()">🎲 Generate</button>
+
+        <h3>🔍 Get a Quote by your Favourite Author:</h3>
+        <select id="author-dropdown" onchange="fetchQuoteByAuthor()">
+            <option value="">Select Author</option>
+        </select>
+
+        <div id="author-quotes" class="author-quotes-box">
+            <!-- Author quotes will appear here -->
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            fetch('/quotes/authors')
+                .then(response => response.json())
+                .then(authors => {
+                    let dropdown = document.getElementById("author-dropdown");
+                    authors.forEach(author => {
+                        let option = document.createElement("option");
+                        option.value = author;
+                        option.innerText = author;
+                        dropdown.appendChild(option);
+                    });
+                });
+        };
+
+        function fetchQuote() {
+            fetch("/quotes/quote")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("quote-text").innerText = `"${data.quote}" - ${data.author}`;
+                })
+                .catch(error => {
+                    document.getElementById("quote-text").innerText = "Error fetching quote.";
+                });
+        }
+
+        function fetchQuoteByAuthor() {
+            const author = document.getElementById("author-dropdown").value;
+            if (author) {
+                fetch(`/quotes/quote?author=${author}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            document.getElementById("quote-text").innerText = data.error;
+                        } else {
+                            document.getElementById("quote-text").innerText = "";
+                            displayAuthorQuotes(data);
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById("quote-text").innerText = "Error fetching quote.";
+                    });
+            }
+        }
+
+        function displayAuthorQuotes(quotes) {
+            const authorQuotesDiv = document.getElementById("author-quotes");
+            authorQuotesDiv.innerHTML = "";
+            quotes.slice(0, 2).forEach(quote => {
+                const quoteElement = document.createElement("p");
+                quoteElement.innerText = `"${quote.quote}" - ${quote.author}`;
+                authorQuotesDiv.appendChild(quoteElement);
+            });
+        }
+    </script>
+</body>
+</html>
